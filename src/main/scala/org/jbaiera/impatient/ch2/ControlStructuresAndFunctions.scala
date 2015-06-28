@@ -1,5 +1,7 @@
 package org.jbaiera.impatient.ch2
 
+import java.io.IOException
+
 /**
  * Chapter 2 - Control Structures and Functions
  */
@@ -156,6 +158,23 @@ class ControlStructuresAndFunctions {
   // ----------------------------------------------------------------
   // 2.11 Exceptions
   // ----------------------------------------------------------------
+  val ifValue = if (a > 0) a + 2 else throw new IllegalArgumentException("a should be positive")
+  // Exceptions are of type "Nothing" so they won't interfere with if else type generalization
+  println("ifValue.isInstanceOf[Int] = " + ifValue.isInstanceOf[Int])
+
+  // catching exceptions is the same as the pattern match syntax
+  try {
+    throw new IllegalArgumentException("Blah")
+  } catch {
+    case _: IOException => println("IO Exception!")
+    case ex: IllegalArgumentException => ex.printStackTrace()
+  }
+
+  try {
+    println("Execute something that might throw")
+  } finally {
+    println("This always executes")
+  }
 
 
 }
