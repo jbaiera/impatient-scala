@@ -6,10 +6,10 @@ import list.LinkedList.LinkedIterator
 object LinkedList {
 	class Node(var data: Int, var next: Option[Node] = Option.empty) {}
 	class LinkedIterator(var node: Option[Node]) extends Iterator[Int] {
-		def hasNext(): Boolean = {
+		override def hasNext(): Boolean = {
 			node.isDefined
 		}
-		def next(): Int = {
+		override def next(): Int = {
 			val r = node.get.data
 			node = node.get.next
 			r
