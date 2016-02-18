@@ -40,6 +40,7 @@ task exercise << {
         if (!file.createNewFile()) {
             throw new GradleException("Could not create '${file.name}' file.")
         }
+        println("Created file : ${file.name}")
         file.write("""\
             |package chapters.$chapterPackage
             |
