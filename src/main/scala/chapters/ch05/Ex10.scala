@@ -18,4 +18,3 @@ object Ex10 extends App {
   // I like this form because it's all in one place. Is that what you wanted to hear, Cay?
 
 }
-        
