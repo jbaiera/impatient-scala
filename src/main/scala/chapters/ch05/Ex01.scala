@@ -21,4 +21,3 @@ object Ex01 extends App {
   }
 
 }
-        

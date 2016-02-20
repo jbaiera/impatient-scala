@@ -13,4 +13,3 @@ object Ex06 extends App {
 
 
 }
-        

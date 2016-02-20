@@ -26,4 +26,3 @@ object Ex05 extends App {
   // Can you call javabeans methods in scala? Yes. Duh.
   // Should you call them? Nah. The property names are better to depend on.
 }
-        

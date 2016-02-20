@@ -10,6 +10,14 @@ package chapters.ch05
   * constructor are you choosing as the primary constructor? Why?
   */
 object Ex08 extends App {
+  class Car(val manufacturer: String, val modelName: String, val modelYear: Int = -1, var licensePlate: String = "") {
 
+    def this(manufacturer: String, modelName: String, license: String) = {
+      this(manufacturer, modelName, licensePlate=license)
+    }
+
+  }
+
+  val c = new Car("Ford", "Taurus", "2HOT")
 }
         

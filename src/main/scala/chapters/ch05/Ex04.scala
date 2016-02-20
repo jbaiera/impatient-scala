@@ -21,4 +21,3 @@ object Ex04 extends App {
   }
 
 }
-        

@@ -26,4 +26,3 @@ public class Ex09 {
 
 	// Scala is a whole lot shorter. We get it, Cay.
 }
-        
