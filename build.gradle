@@ -21,11 +21,16 @@ dependencies {
 
 task exercise << {
     def chapterPropertyName = "chapter"
+    def exercisesPropertyName = "exercises"
     if (!project.hasProperty(chapterPropertyName)) {
         throw new GradleException("You must specify the '$chapterPropertyName' property! (-P$chapterPropertyName=???)")
     }
+    if (!project.hasProperty(exercisesPropertyName)) {
+        throw new GradleException("You must specify the '$exercisesPropertyName' property! (-P$exercisesPropertyName=???)")
+    }
 
     def chapter = project.getProperty(chapterPropertyName)
+    def numberOfExercises = Integer.parseInt(project.getProperty(exercisesPropertyName))
     def chapterPackage = "ch$chapter"
     def File scalaRoot = sourceSets.main.scala.srcDirs.first()
     def destDir = new File(new File(scalaRoot, "chapters"), chapterPackage)
@@ -33,7 +38,7 @@ task exercise << {
         throw new GradleException("Could not create '$destDir' directory.")
     }
 
-    1.upto(10) {
+    1.upto(numberOfExercises) {
         def exampleNumber = (it < 10) ? "0$it" : "$it"
         def exampleName = "Ex$exampleNumber"
         def file = new File(destDir, "${exampleName}.scala")
@@ -51,6 +56,6 @@ task exercise << {
             |object $exampleName extends App {
             |
             |}
-        """.stripMargin())
+            |""".stripMargin())
     }
 }
