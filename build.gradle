@@ -42,20 +42,24 @@ task exercise << {
         def exampleNumber = (it < 10) ? "0$it" : "$it"
         def exampleName = "Ex$exampleNumber"
         def file = new File(destDir, "${exampleName}.scala")
-        if (!file.createNewFile()) {
-            throw new GradleException("Could not create '${file.name}' file.")
+        if (file.exists()) {
+            println("File exists : ${file.name} : Skipping...")
+        } else {
+            if (!file.createNewFile()) {
+                throw new GradleException("Could not create '${file.name}' file.")
+            }
+            println("Created file : ${file.name}")
+            file.write("""\
+                |package chapters.$chapterPackage
+                |
+                |/**
+                |  * Chapter $chapter, Example $exampleNumber:
+                |  *
+                |  */
+                |object $exampleName extends App {
+                |
+                |}
+                |""".stripMargin())
         }
-        println("Created file : ${file.name}")
-        file.write("""\
-            |package chapters.$chapterPackage
-            |
-            |/**
-            |  * Chapter $chapter, Example $exampleNumber:
-            |  *
-            |  */
-            |object $exampleName extends App {
-            |
-            |}
-            |""".stripMargin())
     }
 }
