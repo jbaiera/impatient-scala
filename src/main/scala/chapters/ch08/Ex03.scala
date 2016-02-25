@@ -9,7 +9,7 @@ package chapters.ch08
 object Ex03 extends App {
 
   abstract class Shape {
-    def draw
+    def draw: String
   }
 
   class Rectangle(val x: Double, val y: Double, val w: Double, val h: Double) extends Shape {
