@@ -19,6 +19,18 @@ dependencies {
     compile 'org.scala-lang:scala-library:2.11.1'
 }
 
+tasks.processResources << {
+    def outDir = new File('out')
+    if(!outDir.exists())
+        outDir.mkdir()
+}
+
+tasks.clean << {
+    def outDir = new File('out')
+    if(outDir.exists())
+        outDir.deleteDir()
+}
+
 task exercise << {
     def chapterPropertyName = "chapter"
     def exercisesPropertyName = "exercises"
