@@ -1,7 +1,5 @@
 package chapters.ch09
 
-import chapters.ch09.Ex03._
-
 import scala.io.Source
 
 /**
