@@ -3,7 +3,7 @@ package chapters.ch10
 import java.awt.Point
 
 /**
- * Defind a class OrderedPoint by mixing scala.math.Ordered[Point] into
+ * Define a class OrderedPoint by mixing scala.math.Ordered[Point] into
  * java.awt.Point. Use lexicographic ordering.
  */
 object Ex02 extends App {
