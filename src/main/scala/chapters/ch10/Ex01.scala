@@ -3,10 +3,11 @@ package chapters.ch10
 import java.awt.geom.Ellipse2D
 
 /**
- * Define a trait "RectangleLike" with concrete methods translate and grow.
- * Provide any abstract methods that you need for the implementation so that
- * you can mix in the trait
- */
+  * Chapter 10, Example 01:
+  * Define a trait "RectangleLike" with concrete methods translate and grow.
+  * Provide any abstract methods that you need for the implementation so that
+  * you can mix in the trait
+  */
 object Ex01 extends App {
 
   trait RectangleLike {

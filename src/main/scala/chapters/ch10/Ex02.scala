@@ -3,9 +3,10 @@ package chapters.ch10
 import java.awt.Point
 
 /**
- * Define a class OrderedPoint by mixing scala.math.Ordered[Point] into
- * java.awt.Point. Use lexicographic ordering.
- */
+  * Chapter 10, Example 02:
+  * Define a class OrderedPoint by mixing scala.math.Ordered[Point] into
+  * java.awt.Point. Use lexicographic ordering.
+  */
 object Ex02 extends App {
 
   class OrderedPoint(sx: Int, sy: Int) extends java.awt.Point(sx, sy) with Ordered[java.awt.Point] {
