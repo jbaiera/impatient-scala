@@ -8,4 +8,37 @@ package chapters.ch10
   */
 object Ex04 extends App {
 
+  trait Logger {
+    def log(message: String): Unit ={}
+  }
+
+  trait ConsoleLogger extends Logger {
+    override def log(message: String): Unit = {
+      println(message)
+    }
+  }
+
+  trait CryptoLogger extends Logger {
+    val key = 3
+    override def log(message: String): Unit = {
+      super.log(for (c <- message) yield (c.toInt + key).toChar)
+    }
+  }
+
+  trait NegativeCrypto extends CryptoLogger {
+    override val key = -3
+  }
+
+  class LoggedInformation extends Logger {
+    def run(): Unit = {
+      log("Hello World!")
+    }
+  }
+
+  val info = new LoggedInformation with ConsoleLogger
+  info.run()
+  val caesar = new LoggedInformation with ConsoleLogger with CryptoLogger
+  caesar.run()
+  val negative = new LoggedInformation with ConsoleLogger with CryptoLogger with NegativeCrypto
+  negative.run()
 }
