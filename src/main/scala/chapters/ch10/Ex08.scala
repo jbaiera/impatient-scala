@@ -38,21 +38,21 @@ object Ex08 extends App {
   }
 
   val bin = new JByteArrayInputStream("Hello World!".getBytes()) with Buffered
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
-  println(bin.read())
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read().toChar)
+  println(bin.read()) // EOF
+  println(bin.read()) // EOF
+  println(bin.read()) // EOF
+  println(bin.read()) // EOF
 
 }
