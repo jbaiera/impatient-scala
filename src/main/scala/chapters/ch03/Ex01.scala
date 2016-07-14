@@ -11,6 +11,6 @@ object Ex01 {
   val n = 10
   val a = new Array[Int](n)
 
-  for (each <- 0 to n) a(each) = Random.nextInt(n)
+  for (each <- 0 until n) a(each) = Random.nextInt(n)
 
 }
